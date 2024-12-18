@@ -1,0 +1,40 @@
+id: swapi_characters
+label: 'Import Star Wars Characters'
+migration_group: default
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  urls: 'https://swapi.py4e.com/api/people/'
+  item_selector: results
+  fields:
+    - name: name
+      label: 'Name'
+      selector: name
+    - name: hair_color
+      label: 'Hair Color'
+      selector: hair_color
+    - name: skin_color
+      label: 'Skin Color'
+      selector: skin_color
+    - name: films
+      label: 'Films'
+      selector: films
+    - name: species
+      label: 'Species'
+      selector: species
+    
+  ids:
+    name:
+      type: string
+process:
+  title: name
+  field_hair_color: hair_color
+  field_skin_color: skin_color
+  field_films: films
+  field_species:
+    plugin: species_name_from_api
+    source: species
+destination:
+  plugin: entity:node
+  default_bundle: character

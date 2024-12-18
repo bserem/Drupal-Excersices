@@ -1,0 +1,69 @@
+uuid: 19d87a3b-d3bb-4c11-afe8-bbdbead059fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.character.body
+    - field.field.node.character.field_films
+    - field.field.node.character.field_hair_color
+    - field.field.node.character.field_skin_color
+    - field.field.node.character.field_species
+    - node.type.character
+  module:
+    - link
+    - text
+    - user
+id: node.character.default
+targetEntityType: node
+bundle: character
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_films:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_hair_color:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_skin_color:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_species:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

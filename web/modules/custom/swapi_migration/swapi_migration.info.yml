@@ -1,0 +1,9 @@
+name: 'SWAPI Migration'
+type: module
+description: 'Migrates Star Wars data from SWAPI.'
+core_version_requirement: ^11
+package: Custom
+dependencies:
+  - drupal:migrate
+  - drupal:migrate_plus
+  - drupal:migrate_tools
